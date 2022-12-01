@@ -54,8 +54,8 @@ class DBStorage():
             for typ in types_obj:
                 query_list2 = self.__session.query(typ)
                 for el in query_list2:
-                     key = "{}.{}".format(type(el).__name__, el.id)
-                     dic[key] = el
+                    key = "{}.{}".format(type(el).__name__, el.id)
+                    dic[key] = el
         return dic
 
     def new(self, obj):
