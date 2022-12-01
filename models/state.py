@@ -7,6 +7,7 @@ from sqlalchemy.orm import relationship
 import os
 import models
 
+
 class State(BaseModel, Base):
     """ State class """
     if os.getenv("HBNB_TYPE_STORAGE") == "db":
@@ -16,6 +17,7 @@ class State(BaseModel, Base):
                               cascade="all, delete, delete-orphan")
     else:
         name = ""
+
         def __init__(self, *args, **kwargs):
             """initializes state"""
             super().__init__(*args, **kwargs)
