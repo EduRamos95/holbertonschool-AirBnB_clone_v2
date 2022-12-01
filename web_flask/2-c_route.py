@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-""" 
+"""
 Module 2-c_route
     ip 0.0.0.0, port 5000
     Routes:
     '/': display “Hello HBNB!”
     '/hbnb': display “HBNB”
-    '/c/<text>': display “C ” 
+    '/c/<text>': display “C ”
         followed by the value of
-        the text variable 
+        the text variable
         (replace underscore _ symbols with a space )
     use option strict_slashes=False in your route definition
 """
