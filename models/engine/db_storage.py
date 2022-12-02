@@ -35,6 +35,14 @@ class DBStorage():
                                              os.getenv("HBNB_MYSQL_HOST"),
                                              os.getenv("HBNB_MYSQL_DB")),
                                       pool_pre_ping=True)
+        self.__my_list = {
+                "User": User,
+                "State": State,
+                "City": City,
+                "Amenity": Amenity,
+                "Place": Place,
+                "Reivew": Review
+                }
 
         if os.getenv("HBNB_ENV") == "test":
             Base.metadata.drop_all(self.__engine)
@@ -43,9 +51,11 @@ class DBStorage():
         """ Query on current database for all o specify class"""
         dic = {}
         types_obj = [State, City, User, Place, Amenity, Review]
-        if type(cls) == str:
-            return dic
-        if cls is not None and cls in types_obj:
+        # if type(cls) == str:
+        #    return dic
+        if cls is not None and (cls in types_obj or type(cls) == str):
+            if type(cls) == str:
+                cls = self.__my_list[cls]
             query_list = self.__session.query(cls).all()
             for el in query_list:
                 key = "{}.{}".format(type(el).__name__, el.id)
