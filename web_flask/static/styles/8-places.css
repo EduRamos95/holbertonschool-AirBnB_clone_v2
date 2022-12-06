@@ -6,6 +6,13 @@
 	text-align: center;
 }
 
+.places__list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
 article {
 	display: flex;
 	width: 390px;
@@ -26,19 +33,21 @@ article {
 
 .headline {
 	display: flex;
+	/*aling-items: center;*/
 	flex-direction: row;
 	position: relative;
 
-	height: 80px;	
+	/*height: 80px;*/	
 	width: 100%;
 }
 
 .price_by_night {
 	display: flex;
 	justify-content: center;
-	align-self: flex-end;
+	align-self: center;
+	align-items: center;	
 
-	position: absolute;
+	/*position: absolute;*/
 	right: 0;
 
 	line-height: 60px;
@@ -96,6 +105,9 @@ article h2 {
 	font-size: 30px;
 	margin: 10px auto;
 	padding: 0px;
+	display: flex;
+	text-align: initial;
+	align-items: center;
 }
 
 .guest_icon {
