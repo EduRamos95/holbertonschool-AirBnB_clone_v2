@@ -7,10 +7,6 @@
 	border-radius: 4px;
 }
 
-.amenities {
-	display: inline-block;
-}
-
 .locations {
 	display: inline-block;
 	vertical-align: middle;
@@ -20,6 +16,7 @@
 
 	line-height: 20px;
 	border-right: 1px solid #DDDDDD;
+	position: relative;
 }
 
 .filter_amenities {
@@ -29,7 +26,9 @@
 	float: left;
 	width: 25%;
 	line-height: 20px;
+	position: relative;
 }
+
 
 .popover {
 	list-style-type: none;
@@ -45,6 +44,8 @@
 
 	border: 1px solid #DDDDDD;
 	border-radius: 4px;
+	position: absolute;
+	z-index: 2;
 }
 
 .locations:hover .popover {
