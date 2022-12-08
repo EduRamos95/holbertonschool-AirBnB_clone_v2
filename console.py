@@ -185,8 +185,8 @@ class HBNBCommand(cmd.Cmd):
         new = args.partition(" ")
         c_name = new[0]
         c_id = new[2]
-        print(c_name)
-        print(c_id)
+        # print(c_name)
+        # print(c_id)
         if c_id and ' ' in c_id:
             c_id = c_id.partition(' ')[0]
 
@@ -207,7 +207,7 @@ class HBNBCommand(cmd.Cmd):
         # print(key)
 
         try:
-            del (storage.all(HBNBCommand.classes[c_name])[key])
+            storage.delete(storage.all(HBNBCommand.classes[c_name])[key])
             if os.getenv('HBNB_TYPE_STORAGE') == 'db':
                 storage.delete(storage.all(HBNBCommand.classes[c_name])[key])
             storage.save()
